@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace MyWiFiScanner.Models
 {
     /// <summary>
-    ///точека доступа
+    /// точка доступа
     /// </summary>
     public class MyAccessPoint : INotifyPropertyChanged
     {

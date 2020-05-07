@@ -49,14 +49,22 @@
             Grid.Row="0"
             Grid.Column="0"
             VerticalContentAlignment="Top"
+            ItemsSource="{Binding MyAccessPoints}"
             ScrollViewer.CanContentScroll="False"
-            ScrollViewer.VerticalScrollBarVisibility="Visible"
-           ItemsSource="{Binding MyAccessPoints}">
+            ScrollViewer.VerticalScrollBarVisibility="Visible">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn DisplayMemberBinding="{Binding Ssid, UpdateSourceTrigger=PropertyChanged}" Header="ssid" />
-                        <GridViewColumn DisplayMemberBinding="{Binding SignalStrength, UpdateSourceTrigger=PropertyChanged}" Header="Сила сигнала" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Ssid, UpdateSourceTrigger=PropertyChanged}">
+                            <GridViewColumn.Header>
+                                <GridViewColumnHeader MinWidth="100" Tag="Ssid" Click="GridViewColumnHeader_Click" >ssid</GridViewColumnHeader>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding SignalStrength, UpdateSourceTrigger=PropertyChanged}">
+                            <GridViewColumn.Header>
+                                <GridViewColumnHeader MinWidth="150" Tag="SignalStrength" Click="GridViewColumnHeader_Click">Сила сигнала</GridViewColumnHeader>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
